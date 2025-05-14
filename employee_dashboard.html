@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">
+            <i class="bi bi-speedometer2"></i> HR Admin Dashboard
+        </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 bg-light">
+                    <div class="card-body text-center">
+                        <h2 class="display-5">{{ employees|length }}</h2>
+                        <p class="text-muted">Employees</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">Employee List</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Department</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for employee in employees %}
+                                    <tr>
+                                        <td>{{ employee.employee_id }}</td>
+                                        <td>{{ employee.name }}</td>
+                                        <td>{{ employee.email }}</td>
+                                        <td>{{ employee.department }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

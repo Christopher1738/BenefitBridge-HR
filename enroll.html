@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Enroll Employee{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3>Enroll New Employee</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Department</label>
+                            <input type="text" class="form-control" name="department" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Benefit Plan</label>
+                            <select class="form-select" name="benefit_plan" required>
+                                <option value="Health Insurance">Health Insurance</option>
+                                <option value="Retirement Plan">Retirement Plan</option>
+                                <option value="Dental Plan">Dental Plan</option>
+                                <option value="Vision Plan">Vision Plan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Enrollment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
